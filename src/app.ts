@@ -14,4 +14,4 @@ app.use(cors());
 
 app.use(routes);
 connectToDB();
-app.listen(port, () => console.log(`Listening on http://localhost:8000`));
+app.listen(port, () => console.log(`Listening on http://localhost:${port}`));

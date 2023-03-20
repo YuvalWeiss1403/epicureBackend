@@ -5,7 +5,7 @@ export const getUsers = async function () {
 		const users = await UserModel.find();
 		return users;
 	} catch (e) {
-		throw Error("Error while Paginating users");
+		throw Error("Error while getting users");
 	}
 };
 
@@ -15,6 +15,6 @@ export const addUser = async (user: IUser) => {
 		await _user.save();
 		return _user;
 	} catch (e) {
-		throw Error("Error while Paginating users");
+		throw Error("Error while adding user");
 	}
 };

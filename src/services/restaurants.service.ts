@@ -6,7 +6,7 @@ export const getRests = async function () {
 		const users = await restaurantsModel.find();
 		return users;
 	} catch (e) {
-		throw Error("Error while Paginating restaurants");
+		throw Error("Error while getting restaurants");
 	}
 };
 
@@ -16,7 +16,7 @@ export const addRest = async (rest: IRest) => {
 		await _rest.save();
 		return _rest;
 	} catch (e) {
-		throw Error("Error while Paginating restaurants");
+		throw Error("Error while adding restaurant");
 	}
 };
 
@@ -41,7 +41,7 @@ export const deleteRest = async (restId: string) => {
 
 export const updateRest = async (rest: IRest) => {
 	try {
-		await restaurantsModel.findByIdAndUpdate(rest._id, rest);
+		await restaurantsModel.updateOne(rest._id, rest);
 		return await restaurantsModel.find();
 	} catch (e) {
 		throw Error("Error while updating rest");

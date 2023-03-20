@@ -5,7 +5,7 @@ export const getChefs = async function () {
 		const users = await ChefModel.find();
 		return users;
 	} catch (e) {
-		throw Error("Error while Paginating chefs");
+		throw Error("Error while getting chefs");
 	}
 };
 

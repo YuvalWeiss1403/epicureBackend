@@ -5,7 +5,7 @@ export const getDishes = async function () {
 		const users = await DishModel.find();
 		return users;
 	} catch (e) {
-		throw Error("Error while Paginating dishes");
+		throw Error("Error while getting dishes");
 	}
 };
 
@@ -30,7 +30,7 @@ export const deleteDish = async (dishId: String) => {
 
 export const updateDish = async (dish: IDish) => {
 	try {
-		await DishModel.findByIdAndUpdate(dish);
+		await DishModel.updateOne(dish._id, dish);
 		return await DishModel.find();
 	} catch (e) {
 		throw Error("Error while updating dish");
