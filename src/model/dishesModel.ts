@@ -6,7 +6,6 @@ const dishSchema: Schema = new Schema<IDish>({
 	time: { type: [String], required: true },
 	about: { type: String, required: true },
 	price: { type: Number, required: true },
-	allergan: { type: [String], required: true },
 	icons: { type: [String], required: false },
 	sides: { type: [String], required: false },
 	changes: { type: [String], required: false },
@@ -20,7 +19,6 @@ export interface IDish {
 	time: string[];
 	about: string;
 	price: number;
-	allergan: string[];
 	icons?: string[];
 	sides?: string[];
 	changes?: string[];

@@ -29,13 +29,13 @@ export const addDish = async function (req: Request, res: Response) {
 	// 	return res.status(400).json({ status: 400, message: e.message });
 	// }
 	try {
-		const { restId, isSignatureDish, allergan, price, img, about, name, time } =
+		const { restId, isSignatureDish, icons, price, img, about, name, time } =
 			req.body;
 		const dish = await dishesModel.create({
 			about,
 			name,
 			time,
-			allergan,
+			icons,
 			price,
 			isSignatureDish,
 			img,
